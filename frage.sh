@@ -4,9 +4,26 @@
 # als dritte Parameter übergeben werden. Wenn keine passende Antwort angege-
 # ben wird, soll die Frage wiederholt werden.
 # - Falls eine Antwort in dem möglichen ’Ja’ beantwortet wird, soll der Wert
-#   zurückgeliefert werden,
+#   0 zurückgeliefert werden,
 # - falls die mögliche ’Nein’ Antwort angegeben wird soll eine 1 zurückgeliefert
 #   werden.
 
 # Beispiel
 # $ ./frage.sh "Noch einen Kaffee ? " "Ja" "Nein"
+
+
+#!/bin/bash
+
+echo $1
+read input
+
+while [ $input != $2 ] && [ $input != $3 ]; do
+    echo $1
+    read input
+done
+
+if [ $input = $2 ]; then
+    exit 0
+else
+    exit 1
+fi
