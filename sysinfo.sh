@@ -9,15 +9,17 @@
 
 #!/bin/bash
 
-echo "CPU:           $(lscpu | grep "Model name" | cut -c 22-)"
+echo "CPU:           $(lscpu | grep "Model name" | tr -s " " | cut -d" " -f3-)"
 
-echo "RAM:           total: $(free -m | grep Mem | cut -c 13-43) MeBi"
-echo "               free:  $(free -m | grep Mem | cut -c 13-43)"
+echo "RAM:           total: $(free -m | grep Mem | tr -s " " | cut -d" " -f2) MeBi"
+echo "               free:  $(free -m | grep Mem | tr -s " " | cut -d" " -f4) MeBi"
 
-echo "ROOT:          $(df -h | grep "/dev/sda4")"
+echo "ROOT:          total: $(df -h / | grep / | tr -s " " | cut -d" " -f2 ) Gibi"
+echo "               free:  $(df -h / | grep / | tr -s " " | cut -d" " -f4 ) Gibi"
 
-echo "HOME:          $(df -h | grep "/home")"
+echo "HOME:          total: $(df -h | grep /home | tr -s " " | cut -d" " -f2 ) Gibi"
+echo "               free:  $(df -h | grep /home | tr -s " " | cut -d" " -f4 ) Gibi"
 
 echo "Anz. Prozesse: $(ps -e | wc -l)"
 
-echo "OS/Kernel:     $(uname -or)"
+echo "OS/Kernel:     $(uname -o) ($(uname -r))"
