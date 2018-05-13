@@ -12,6 +12,7 @@
 # $ ./frage.sh "Noch einen Kaffee ? " "Ja" "Nein"
 
 
+
 #!/bin/bash
 
 echo $1
