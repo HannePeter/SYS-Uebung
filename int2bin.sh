@@ -2,6 +2,7 @@
 # Bitstring ausgibt.
 
 
+
 #!/bin/bash
 
 number=$1
