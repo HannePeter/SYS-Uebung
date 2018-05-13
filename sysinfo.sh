@@ -7,6 +7,8 @@
 # - Die Anzahl laufender Prozesse
 # - Name des laufenden Betriebssystems inklusive Kernelversion
 
+
+
 #!/bin/bash
 
 echo "CPU:           $(lscpu | grep "Model name" | tr -s " " | cut -d" " -f3-)"
