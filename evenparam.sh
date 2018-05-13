@@ -10,6 +10,7 @@
 # aufgerufen wurde.
 
 
+
 #!/bin/bash
 
 isEven=$(($# % 2))
