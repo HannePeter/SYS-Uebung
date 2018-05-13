@@ -2,6 +2,7 @@
 # dozeilenparameter ausgibt.
 
 
+
 #!/bin/bash
 
 parameter=$@
