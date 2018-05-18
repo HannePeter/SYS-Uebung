@@ -20,7 +20,7 @@ if [ $isEven -eq 0 ]; then
     loadFirst=0
     for element in $parameter; do
         if [ $loadFirst -eq 1 ]; then
-            echo "$first = $element"
+            echo "$first=$element"
             loadFirst=0
         else
             first=$element

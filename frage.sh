@@ -15,11 +15,23 @@
 
 #!/bin/bash
 
-echo $1
+usage ()
+{
+    echo "Usage: $0 <question> <positive answer> <negative answer>" >&2
+    exit 1
+}
+
+if [ $# -ne 3 ]; then
+    usage
+fi
+
+
+
+echo -n "$1 "
 read input
 
 while [ $input != $2 ] && [ $input != $3 ]; do
-    echo $1
+    echo -n "$1 "
     read input
 done
 
