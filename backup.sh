@@ -25,12 +25,16 @@ fi
 backuppostfix=$1
 files=$(ls)
 
+echo "- $backuppostfix - $files -"
+
 for file in $files; do                                                          # Dateien im Verzeichnis durchgehen
 
     filepostfix=$(echo $file | cut -d"." -f2)                                   # Dateipostfix feststellen und mit vorgegebenen postfix vergleichen
     if [ $filepostfix == $backuppostfix ]; then
 
-        while [ -z "$input" ] || [ "$input" != "j" -a "$input" != "n" ]; do     # abfrage, ob gesichert werden soll
+        echo -n  "Moechten Sie die Datei $file sichern? (j/n): "                # abfrage, ob gesichert werden soll
+        read input
+        while [ -z "$input" ] || [ "$input" != "j" -a "$input" != "n" ]; do
             echo -n  "Moechten Sie die Datei $file sichern? (j/n): "
             read input
         done
@@ -45,7 +49,7 @@ for file in $files; do                                                          
                 echo "Erstelle Backup von $file"
                 cp ./$file backup/$file
             else
-                echo 'Die Datei "backup" ist kein Verzeichnis"'
+                echo 'Die Datei "backup" ist kein Verzeichnis"' >&2
             fi
         fi
     fi
