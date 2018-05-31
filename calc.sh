@@ -36,7 +36,7 @@ case $operator in
     DIV) result=$(( op1 / op2 ));;
     MOD) result=$(( op1 % op2 ));;
     EXP) result=$(( op1 ** op2 ));;
-    *) echo "Unknown operator";echo "possible operators: MULT, ADD, SUB, DIV, MOD, EXP" >&2
+    *) echo "Unknown operator";echo "possible operators: MULT, ADD, SUB, DIV, MOD, EXP" >&2;;
 esac
 
 echo $result
