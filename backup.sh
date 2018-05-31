@@ -25,8 +25,6 @@ fi
 backuppostfix=$1
 files=$(ls)
 
-echo "- $backuppostfix - $files -"
-
 for file in $files; do                                                          # Dateien im Verzeichnis durchgehen
 
     filepostfix=$(echo $file | cut -d"." -f2)                                   # Dateipostfix feststellen und mit vorgegebenen postfix vergleichen
