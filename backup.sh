@@ -42,7 +42,7 @@ for file in $files; do                                                          
             fi
 
             if [ -d backup ]; then                                              # Wenn backup ein Verzeichnis ist -> Datei sichern
-                echo "kopiere $file"
+                echo "Erstelle Backup von $file"
                 cp ./$file backup/$file
             else
                 echo 'Die Datei "backup" ist kein Verzeichnis"'
