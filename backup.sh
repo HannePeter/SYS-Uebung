@@ -30,9 +30,7 @@ for file in $files; do                                                          
     filepostfix=$(echo $file | cut -d"." -f2)                                   # Dateipostfix feststellen und mit vorgegebenen postfix vergleichen
     if [ $filepostfix == $backuppostfix ]; then
 
-        echo -n  "Moechten Sie die Datei $file sichern? (j/n): "                # Nachfrage, ob gespeichert werden soll
-        read input
-        while [ -z "$input" ] || [ "$input" != "j" -a "$input" != "n" ]; do
+        while [ -z "$input" ] || [ "$input" != "j" -a "$input" != "n" ]; do     # abfrage, ob gesichert werden soll
             echo -n  "Moechten Sie die Datei $file sichern? (j/n): "
             read input
         done
