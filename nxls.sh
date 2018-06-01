@@ -18,6 +18,10 @@ fi
 
 
 
+if [ ! -d $1 ]; then
+    echo "\"$1\" ist kein Verzeichnis!" >&2
+    exit 1
+fi
 
 echo "Folgende Dateien sind nicht ausfuehrbar:"
 for file in $1/*; do
