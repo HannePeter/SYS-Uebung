@@ -23,7 +23,6 @@ fi
 
 
 files=$(ls *.$1 )
-echo $files
 
 for file in $files; do
 
