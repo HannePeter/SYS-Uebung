@@ -43,7 +43,7 @@ echo "hits,password,MD5 hash"
 
 for word in $words; do
 
-    pwhash=$(echo $word | md5sum | cut -c -32)
+    pwhash=$(echo -n $word | md5sum | cut -c -32)
 
     counter=0
     for givenhash in $hashes; do
