@@ -22,33 +22,29 @@ fi
 
 
 
-backuppostfix=$1
-files=$(ls)
+files=$(ls *.$1 )
+echo $files
 
-for file in $files; do                                                          # Dateien im Verzeichnis durchgehen
+for file in $files; do
 
-    filepostfix=$(echo $file | cut -d"." -f2)                                   # Dateipostfix feststellen und mit vorgegebenen postfix vergleichen
-    if [ $filepostfix == $backuppostfix ]; then
-
-        echo -n  "Moechten Sie die Datei $file sichern? (j/n): "                # abfrage, ob gesichert werden soll
+    echo -n  "Moechten Sie die Datei $file sichern? (j/n): "                # abfrage, ob gesichert werden soll
+    read input
+    while [ -z "$input" ] || [ "$input" != "j" -a "$input" != "n" ]; do
+        echo -n  "Moechten Sie die Datei $file sichern? (j/n): "
         read input
-        while [ -z "$input" ] || [ "$input" != "j" -a "$input" != "n" ]; do
-            echo -n  "Moechten Sie die Datei $file sichern? (j/n): "
-            read input
-        done
+    done
 
-        if [ $input == "j" ]; then                                              # Wenn ja:
-            if [ ! -e backup ]; then                                            # Verzeichnis erstellen, wenn nicht vorhanden
-                mkdir backup
-                echo 'Verzeichnis "backup" wurde erstellt'
-            fi
+    if [ $input == "j" ]; then                                              # Wenn ja:
+        if [ ! -e backup ]; then                                            # Verzeichnis erstellen, wenn nicht vorhanden
+            mkdir backup
+            echo 'Verzeichnis "backup" wurde erstellt'
+        fi
 
-            if [ -d backup ]; then                                              # Wenn backup ein Verzeichnis ist -> Datei sichern
-                echo "Erstelle Backup von $file"
-                cp ./$file backup/$file
-            else
-                echo 'Die Datei "backup" ist kein Verzeichnis"' >&2
-            fi
+        if [ -d backup ]; then                                              # Wenn backup ein Verzeichnis ist -> Datei sichern
+            echo "Erstelle Backup von $file"
+            cp ./$file backup/$file
+        else
+            echo 'Die Datei "backup" ist kein Verzeichnis"' >&2
         fi
     fi
 done
