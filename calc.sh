@@ -25,18 +25,15 @@ if [ $# -ne 3 ]; then
 fi
 
 
-op1=$1
-op2=$3
-operator=$2
 
-case $operator in
-    ADD) result=$(( op1 + op2 ));;
-    SUB) result=$(( op1 - op2 ));;
-    MULT) result=$(( op1 * op2 ));;
-    DIV) result=$(( op1 / op2 ));;
-    MOD) result=$(( op1 % op2 ));;
-    EXP) result=$(( op1 ** op2 ));;
-    *) echo "Unknown operator";echo "possible operators: MULT, ADD, SUB, DIV, MOD, EXP" >&2;;
+case $2 in
+    ADD) result=$(( $1 + $3 ));;
+    SUB) result=$(( $1 - $3 ));;
+    MULT) result=$(( $1 * $3 ));;
+    DIV) result=$(( $1 / $3 ));;
+    MOD) result=$(( $1 % $3 ));;
+    EXP) result=$(( $1 ** $3 ));;
+    *) echo "Unknown operator" >&2;echo "possible operators: MULT, ADD, SUB, DIV, MOD, EXP" >&2;;
 esac
 
 echo $result
