@@ -24,18 +24,16 @@ fi
 
 
 
-files=$(ls)
-old=$1
-new=$2
-len=$(echo $old | wc -c)
+len=$(echo $1 | wc -m)
 prelen=$(( len - 1 ))
 
+files=$(ls)
 for file in $files; do
 
     filepre=$(echo $file | cut -c -$prelen)
     restoffile=$(echo $file | cut -c $len-)
 
-    if [ $filepre == $old  ]; then
-        mv $file $new"$restoffile"
+    if [ $filepre == $1  ]; then
+        mv $file $2"$restoffile"
     fi
 done
