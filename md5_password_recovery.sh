@@ -37,20 +37,17 @@ fi
 
 
 words=$(cat $1)
-hashes=$(cat $2)
 
 echo "hits,password,MD5 hash"
 
 for word in $words; do
 
     pwhash=$(echo -n $word | md5sum | cut -c -32)
+    counter=$(cat $2 | grep $pwhash | wc -l)
 
-    counter=0
-    for givenhash in $hashes; do
-        if [ $pwhash == $givenhash ]; then
-            counter=$(( counter + 1 ))
-        fi
-    done
+    echo "$counter,\"$word\",$pwhash" >> .md5passwordcache
 
-    echo "$counter,\"$word\",$pwhash"
 done
+
+sort -r .md5passwordcache
+rm .md5passwordcache
