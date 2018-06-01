@@ -19,23 +19,19 @@ if [ $# -ne 2 ]; then
     usage
 fi
 
-
-
-min=$1
-max=$2
-files=$(ls)
-
-if [ $min -ge $max ]; then
+if [ $1 -ge $2 ]; then
     echo "Der Parameter <min> muss kleiner als <max> sein!" >&2
     exit 1
 fi
 
+
+
+files=$(ls)
 for file in $files; do
 
-    strlen=$(echo $file | wc -c)
-    strlen=$(( strlen -1 ))
+    strlen=$(echo -n $file | wc -c)
 
-    if [ $strlen -ge $min -a $strlen -lt $max ]; then
+    if [ $strlen -ge $1 -a $strlen -lt $2 ]; then
         echo $file
     fi
 done
