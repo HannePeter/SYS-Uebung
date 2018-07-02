@@ -43,7 +43,7 @@ for file in $files; do
             echo "Erstelle Backup von $file"
             cp ./$file backup/$file
         else
-            echo 'Die Datei "backup" ist kein Verzeichnis"' >&2
+            echo 'Die Datei "backup" ist kein Verzeichnis' >&2
         fi
     fi
 done
