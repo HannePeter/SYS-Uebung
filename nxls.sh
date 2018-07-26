@@ -19,7 +19,7 @@ fi
 
 
 if [ ! -d $1 ]; then
-    echo "\"$1\" ist kein Verzeichnis!" >&2
+    echo '"$1" ist kein Verzeichnis!' >&2
     exit 1
 fi
 

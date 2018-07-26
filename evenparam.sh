@@ -13,21 +13,27 @@
 
 #!/bin/bash
 
-isEven=$(($# % 2))
-
-if [ $isEven -eq 0 ]; then
-    parameter=$@
-    loadFirst=0
-    for element in $parameter; do
-        if [ $loadFirst -eq 1 ]; then
-            echo "$first=$element"
-            loadFirst=0
-        else
-            first=$element
-            loadFirst=1
-        fi
-    done
-else
-    echo "Es wird eine gerade Anzahl an Parametern benötigt" >&2 
+usage ()
+{
+    echo "Es wird eine gerade Anzahl an Parametern benötigt" >&2
     exit 1
+}
+
+isEven=$(($# % 2))
+if [ $isEven -eq 0 ]; then
+    usage
 fi
+
+
+
+parameter=$@
+loadFirst=0
+for element in $parameter; do
+    if [ $loadFirst -eq 1 ]; then
+        echo "$first=$element"
+        loadFirst=0
+    else
+        first=$element
+        loadFirst=1
+    fi
+done

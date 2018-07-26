@@ -15,7 +15,7 @@
 
 usage ()
 {
-    echo "usage: S0 <old-prefix> <new-prefix>" >&2
+    echo "usage: $0 <old-prefix> <new-prefix>" >&2
 }
 
 if [ $# -ne 2 ]; then
