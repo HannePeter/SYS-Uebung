@@ -25,12 +25,12 @@ Script ausführen
 ### Übungsblatt 3
 
 ```
-1.  Schreiben Sie ein Shell-Skript count.sh,
+1.  Schreiben Sie ein Shell-Skript 'count.sh',
     das die Anzahl der übergebenen Kommandozeilenparameter ausgibt.
 ```
 
 ```
-2.  Schreiben Sie ein Bash-Skript sysinfo.sh, 
+2.  Schreiben Sie ein Bash-Skript 'sysinfo.sh', 
     welches die folgenden Systeminformationen ausgibt:
 
         -CPU (Name und Taktung)
@@ -42,7 +42,7 @@ Script ausführen
 ```
 
 ```
-3.  Schreiben Sie ein Shellskript frage.sh,
+3.  Schreiben Sie ein Shellskript 'frage.sh',
     welches als Parameter drei Strings übernimmt. Der erste Kommandozeilenparameter
     soll als Frage gestellt werden. Die mögliche ’Ja’ Antwort soll als zweiter
     Parameter und mögliche ’Nein’ Antwort als dritte Parameter übergeben werden.
@@ -56,12 +56,12 @@ Script ausführen
 ```
 
 ```
-4.  Schreiben Sie ein Bash-Skript int2bin.sh,
+4.  Schreiben Sie ein Bash-Skript 'int2bin.sh',
     welches eine übergeben Ganzzahl als Bitstring ausgibt.
 ```
 
 ```
-5.  Schreiben Sie ein Shell-Skript evenparam.sh,
+5.  Schreiben Sie ein Shell-Skript 'evenparam.sh',
     welches eine gerade Anzahl von Kommandozeilenparameter aufweist.
     Es hat also die Syntax:
     
@@ -74,7 +74,7 @@ Script ausführen
 ```
 
 ```
-6.  Schreiben Sie ein Shell-Skript last2.sh,
+6.  Schreiben Sie ein Shell-Skript 'last2.sh',
     das nur die letzten beiden Kommandozeilenparameter ausgibt.
 ```
 
@@ -83,7 +83,7 @@ Script ausführen
 ### Übungsblatt 4
 
 ```
-1.  Schreiben Sie ein Shell-Skript backup.sh,
+1.  Schreiben Sie ein Shell-Skript 'backup.sh',
     welches Dateien wie im Folgenden beschrieben kopiert. Als Kommandozeilenparameter
     soll ein Postfix (Dateiendung) übergeben werden. Es sollen nur Datei aus dem
     aktuellen Verzeichnisse mit dem gleichen Postfix kopiert werden. Bei jeder zu 
@@ -93,7 +93,7 @@ Script ausführen
 ```
 
 ```
-2.  Schreiben Sie ein Shell-Skript rls.sh mit der Syntax 'rls.sh <min> <max>'.
+2.  Schreiben Sie ein Shell-Skript 'rls.sh <min> <max>'.
     Das Skript soll alle Dateien im aktuellen Verzeichnis auflistet, deren Namen
     eine Länge von mindestens <min> Zeichen UND weniger als <max> Zeichen hat.
     Geben Sie eine Usage-Meldung auf stderr aus und beenden Sie das Skript mit dem
@@ -101,7 +101,7 @@ Script ausführen
 ```
 
 ```
-3.  Schreiben Sie ein Shell-Skript premv.sh <old-prefix> <new-prefix>,
+3.  Schreiben Sie ein Shell-Skript 'premv.sh <old-prefix> <new-prefix>',
     welches bei allen Dateinamen im aktuellen Verzeichnis, die mit Präfix
     'old-prefix' beginnen, durch den Präfix 'new-prefix' ersetzt.
     
@@ -115,7 +115,7 @@ Script ausführen
 ```
 
 ```
-4.  Schreiben Sie ein Bash-Skript md5_password_recovery.sh,
+4.  Schreiben Sie ein Bash-Skript 'md5_password_recovery.sh',
     welches als ersten Paramter eine Wörterliste (Textdatei mit einem Wort per Zeile)
     und als zweiten Paramter eine Liste von gehashten Passwörtern übergeben bekommt.
     Das Programm soll für jedes Wort testen, ob der zugehörige MD5-Hash in enthalten ist.
@@ -137,13 +137,13 @@ Script ausführen
 ```
 
 ```
-5.  Schreiben Sie ein Bash-Skript nxls.sh <directory>,
+5.  Schreiben Sie ein Bash-Skript 'nxls.sh <directory>',
     welches in dem übergebenen Verzeichnis 'directory' nur
     regulärer Dateien anzeigt, welche nicht ausfühbar sind.
 ```
 
 ```
-6.  Schreiben Sie ein Bash-Skript calc.sh <int> <operator> <int>,
+6.  Schreiben Sie ein Bash-Skript 'calc.sh <int> <operator> <int>',
     welches als Taschenrechner fungieren soll. Es sollen die folgenden Operatoren
     unterstützt werden: MULT, ADD, SUB, DIV, MOD und EXP.
     Verwenden Sie die Case-Anweisung.
