@@ -9,7 +9,7 @@ Laborübung zur Vorlesung "Systemprogrammierung"
 Script ausführbar machen
 
 ```
-chmod 774 <name>.sh
+chmod 744 <name>.sh
 ```
 
 Script ausführen
